@@ -1,0 +1,25 @@
+flows:
+  transfer_money:
+    description: Collecting information for capturing a lead.
+    steps:
+      - collect: first_name
+      - collect: last_name
+      - collect: email
+        description: The email of the user. Must be a valid email.
+      - action: action_check_valid_email
+        next:
+          - if: not slots.is_valid_email
+            then:
+              - action: utter_invalid_email
+                next: END
+          - else: final_confirmation
+      - collect: final_confirmation
+        id: final_confirmation
+        next:
+          - if: not slots.final_confirmation
+            then:
+              - action: utter_submission_cancelled
+                next: END
+          - else: submission_successful
+      - action: utter_submission_complete
+        id: submission_successful
