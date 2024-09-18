@@ -38,3 +38,5 @@ responses:
     - text: "All done. Thank you {first_name} for your submission."
   utter_invalid_email:
     - text: "Your email you tried to use is invalid."
+  utter_no_information:
+    - text: "I don't have information on that right now, but if you have any questions about my company, just drop your email and we'll be in touch."

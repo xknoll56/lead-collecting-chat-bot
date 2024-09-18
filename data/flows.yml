@@ -1,5 +1,5 @@
 flows:
-  transfer_money:
+  collect_lead:
     description: Collecting information for capturing a lead.
     steps:
       - collect: first_name
@@ -23,3 +23,8 @@ flows:
           - else: submission_successful
       - action: utter_submission_complete
         id: submission_successful
+
+  handle_off_topic_questions:
+    description: Handles any inquireies that are not relevant to captureing a lead or leadpages in general.
+    steps:
+      - action: utter_no_information
