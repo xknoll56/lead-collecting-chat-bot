@@ -25,6 +25,6 @@ flows:
         id: submission_successful
 
   handle_off_topic_questions:
-    description: Handles any inquireies that are not relevant to captureing a lead or leadpages in general.
+    description: Handles any inquireies that are not relevant to capturing a lead or leadpages in general.
     steps:
       - action: utter_no_information
